@@ -109,7 +109,7 @@ function Landing() {
                 <div className='row p-5 bg-dark'>
                     <div className="col-lg-6">
                         
-                            <img src="https://www.bloomspace.com.au/wp-content/uploads/adobestock_408763091-768x512.jpeg" alt="" style={{ width: "100%", height: "500px" }} />
+                            <img src="/images/care-tips.png" alt="Succulent Care" style={{ width: "100%", height: "500px", objectFit: "cover" }} className="rounded shadow" />
                         
                     </div>
                     <div className="col-lg-6 text-light mt-5 p-5">
