@@ -1,3 +1,3 @@
-const serverURL = import.meta.env.VITE_SERVER_URL || 'https://envirogreenserver.onrender.com/api'
-
+const serverURL= 'https://envirogreenserver-1.onrender.com'
+//http://loca3000lhost:
 export default serverURL
