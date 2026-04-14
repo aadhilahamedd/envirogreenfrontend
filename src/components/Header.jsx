@@ -53,29 +53,31 @@ function Header() {
             )}
           </Nav>
           
-          <Form className="d-flex my-2 my-lg-0 align-items-center" onSubmit={handleSearch}>
-            <Form.Control
-              type="search"
-              placeholder="Search plants..."
-              className="me-2 bg-light text-dark"
-              aria-label="Search"
-              value={localSearch}
-              onChange={(e) => {
-                setLocalSearch(e.target.value)
-                setSearchKey(e.target.value) // Live search
-              }}
-              style={{ width: "250px" }}
-            />
-            <Button variant="outline-light" type="submit">Search</Button>
+          <Form className="d-flex flex-column flex-lg-row my-2 my-lg-0 align-items-lg-center ms-auto" onSubmit={handleSearch}>
+            <div className="d-flex align-items-center mb-2 mb-lg-0 order-2 order-lg-1">
+              <Form.Control
+                type="search"
+                placeholder="Search plants..."
+                className="me-2 bg-light text-dark"
+                aria-label="Search"
+                value={localSearch}
+                onChange={(e) => {
+                  setLocalSearch(e.target.value)
+                  setSearchKey(e.target.value) // Live search
+                }}
+                style={{ width: "200px" }}
+              />
+              <Button variant="outline-light" type="submit" className="me-lg-3">Search</Button>
+            </div>
             
-            <div className="ms-3 mt-2 mt-lg-0 d-flex align-items-center">
+            <div className="d-flex align-items-center order-1 order-lg-2 mb-3 mb-lg-0 ms-lg-2">
               {user ? (
-                <>
-                  <span className="text-light fw-bold mx-3 fs-5">Hi, {user.username}</span>
+                <div className="d-flex align-items-center">
+                  <span className="text-light fw-bold me-3 fs-6 fs-lg-5 text-truncate" style={{ maxWidth: "120px" }}>Hi, {user.username}</span>
                   <Button variant="danger" size="sm" onClick={handleLogout} className="me-3">Logout</Button>
-                </>
+                </div>
               ) : (
-                <Nav.Link href="/login" className="text-light fs-5 mx-3 border border-light rounded px-3 py-1">Login</Nav.Link>
+                <Nav.Link href="/login" className="text-light fs-6 fs-lg-5 me-3 border border-light rounded px-3 py-1">Login</Nav.Link>
               )}
               <Cart />
             </div>

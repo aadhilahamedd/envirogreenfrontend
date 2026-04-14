@@ -47,21 +47,36 @@ function Login() {
 
     return (
         <>
-            <div className='' style={{ backgroundImage: `url(${'https://t4.ftcdn.net/jpg/11/78/60/83/360_F_1178608304_3n9i0zfCiPTR4d2EYokw767KgvCHS2FN.jpg'})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%' }}>
-                <div className='row'>
-                    <div className="col-lg-3"></div>
-                    <div className="col-lg-6 ">
-                        <div className='card shadow rounded mt-5 p-5 bg-secondary my-5' style={{ maxWidth: '500px', margin: '20px auto' }}>
-                            <h2 className='fw-bold'>Login</h2>
-                            <p className='mt-3'>Don't have a account yet? <a href="/account" style={{ textDecoration: "none" }}>Create account</a></p>
-                            <input onChange={(e) => setlogin({ ...login, email: e.target.value })} type="email" className='form-control mt-5' placeholder='Email' />
-                            <input onChange={(e) => setlogin({ ...login, password: e.target.value })} type="password" className='form-control mt-3' placeholder='Password' />
-                            <a className='text-success mt-4' href="/password" style={{ textDecoration: "none" }}>Forgot your password?</a>
-                            <button onClick={loginApi} className='btn btn-success mt-5'>SIGN IN</button>
-                            <a className='mt-4 my-5' href="/">Return to Store</a>
+            <div className='d-flex align-items-center justify-content-center' style={{ 
+                backgroundImage: `url(${'https://t4.ftcdn.net/jpg/11/78/60/83/360_F_1178608304_3n9i0zfCiPTR4d2EYokw767KgvCHS2FN.jpg'})`, 
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center', 
+                minHeight: 'calc(100vh - 100px)', 
+                width: '100%',
+                padding: '20px 0'
+            }}>
+                <div className="container">
+                    <div className='row justify-content-center mx-0'>
+                        <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+                            <div className='card shadow rounded p-4 p-md-5 bg-secondary text-primary' style={{ maxWidth: '450px', margin: '0 auto' }}>
+                                <h2 className='fw-bold text-center mb-1'>Login</h2>
+                                <div className="text-center mb-4">
+                                    <p className='small'>Don't have an account yet? <a href="/account" style={{ textDecoration: "none" }}>Create account</a></p>
+                                </div>
+                                <div className="form-group">
+                                    <input onChange={(e) => setlogin({ ...login, email: e.target.value })} type="email" className='form-control mt-4 py-2' placeholder='Email Address' />
+                                    <input onChange={(e) => setlogin({ ...login, password: e.target.value })} type="password" className='form-control mt-3 py-2' placeholder='Password' />
+                                </div>
+                                <div className="text-end mt-2">
+                                    <a className='text-success small' href="/password" style={{ textDecoration: "none" }}>Forgot password?</a>
+                                </div>
+                                <button onClick={loginApi} className='btn btn-success fw-bold py-2 mt-4 rounded-pill w-100'>SIGN IN</button>
+                                <div className="text-center mt-4">
+                                    <a className='text-muted small text-decoration-none' href="/"><i className="fa-solid fa-arrow-left me-2"></i>Return to Store</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-lg-3"></div>
                 </div>
             </div>
         </>
